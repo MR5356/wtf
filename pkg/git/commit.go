@@ -9,6 +9,9 @@ import (
 )
 
 func Commit(msg string) error {
+	if len(msg) == 0 {
+		return fmt.Errorf("empty commit message")
+	}
 	r, err := git.PlainOpen(".")
 	if err != nil {
 		return err
@@ -44,8 +47,12 @@ func Commit(msg string) error {
 		},
 	})
 
-	fmt.Printf("commit with name %s and email %s\n", author.Author.Name, author.Author.Email)
+	obj, err := r.CommitObject(commit)
+	if err != nil {
+		return err
+	}
 
-	_, err = r.CommitObject(commit)
+	fmt.Printf("commit message \"%s\" with name %s and email %s\n", msg, author.Author.Name, author.Author.Email)
+
 	return err
 }
