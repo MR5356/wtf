@@ -1,13 +1,14 @@
-package commit
+package git
 
 import (
 	"fmt"
 	"github.com/go-git/go-git/v5"
 	"github.com/go-git/go-git/v5/plumbing/object"
 	"math/rand"
+	"time"
 )
 
-func Test(file string) error {
+func Commit(msg string) error {
 	r, err := git.PlainOpen(".")
 	if err != nil {
 		return err
@@ -33,19 +34,18 @@ func Test(file string) error {
 		return err
 	}
 
-	_, err = w.Add(file)
-	if err != nil {
-		return err
-	}
+	author := authors[rand.Intn(len(authors))]
 
-	fmt.Println("git status --porcelain")
-	status, err := w.Status()
-	if err != nil {
-		return err
-	}
+	commit, err := w.Commit(msg, &git.CommitOptions{
+		Author: &object.Signature{
+			Name:  author.Author.Name,
+			Email: author.Author.Email,
+			When:  time.Now(),
+		},
+	})
 
-	fmt.Println(status)
+	fmt.Printf("commit with name %s and email %s\n", author.Author.Name, author.Author.Email)
 
-	fmt.Println(authors[rand.Intn(len(authors))])
-	return nil
+	_, err = r.CommitObject(commit)
+	return err
 }
