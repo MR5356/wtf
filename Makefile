@@ -11,7 +11,7 @@ help:
 build: clean deps ## Build the project
 	go build -ldflags "-s -w -X '$(MODULE_NAME)/pkg/version.Version=$(VERSION)'" -o _output/$(RELEASE) cmd/wtf.go
 
-release: clean deps ## Generate releases for unix systems
+release: clean deps test ## Generate releases for unix systems
 	chmod +x hack/release.sh
 	bash -c "hack/release.sh $(VERSION) $(RELEASE) $(MODULE_NAME)"
 
@@ -20,3 +20,6 @@ deps: ## Install dependencies using go get
 
 clean: ## Clean
 	rm -rf _output
+
+test:
+	go test -v ./...
