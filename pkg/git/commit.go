@@ -52,7 +52,7 @@ func Commit(msg string) error {
 		return err
 	}
 
-	fmt.Printf("commit message \"%s\" with name %s and email %s\n", msg, author.Author.Name, author.Author.Email)
+	fmt.Printf("[%s] commit message \"%s\" with name %s and email %s\n", obj.Hash.String(), msg, author.Author.Name, author.Author.Email)
 
 	return err
 }
