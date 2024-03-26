@@ -3,6 +3,12 @@
 明白，理解，实在没办法    
 
 ## 安装
+### 通过homebrew安装
+```shell
+brew install mr5356/brew/wtf
+```
+
+### 二进制安装
 点击这里下载最新的二进制安装包 [点击下载](https://github.com/MR5356/wtf/releases) 
 
 把二进制包放到任何你系统识别的PATH中就能用了
