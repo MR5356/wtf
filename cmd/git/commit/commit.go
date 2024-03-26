@@ -12,6 +12,7 @@ var (
 func NewGitCommitCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:       "commit",
+		Short:     "Select one person at random as the submitter",
 		ValidArgs: []string{"message"},
 		RunE: func(cmd *cobra.Command, args []string) error {
 			return git.Commit(message)

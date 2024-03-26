@@ -1,5 +1,5 @@
 RELEASE = wtf
-VERSION = $(shell date +%Y%m%d)
+VERSION ?= "PROD1.1.0_R$(shell git rev-parse --short HEAD)_T$(shell date +%Y%m%d)"
 MODULE_NAME = github.com/MR5356/wtf
 
 .DEFAULT_GOAL := help

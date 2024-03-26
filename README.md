@@ -20,4 +20,26 @@
 wtf git commit -m "oh, sod it, wtf"
 ```
 
-## [Click To Listen The Job Song](music.163.com/outchain/player?type=2&id=1980023227&auto=1&height=66)
+## Damn noob coworker!
+### 缘起
+同事：“容器挂了，帮我看看咋回事儿”
+
+我™：“kubectl exec -it noob -n noob -- bash”【PS：库啵C题艾欧 ~~~】
+
+同事：“pardon”【PS：意思就这意思，这句话他肯定不会】
+
+我™：“kubectl exec -it noob -n noob -- bash”【PS：k u b，k小写，e c t l ~~~ 王德发！】
+
+### 缘灭
+程序启动后将当前终端分享给你的noob同事，让他好好看，好好学！支持只读【菜鸡别乱动模式】和双向操作同步【跟我说的做模式】
+
+```shell
+wtf saw
+```
+支持参数：
+* -p 自定义网页端口，默认为8080
+* 支持命令后加参数，如`bash`, `zsh`，默认为`sh`
+
+# 总有人要疯的，为什么疯的人不能是我！！！
+
+## [Click To Listen The Job Song](https://music.163.com/outchain/player?type=2&id=1980023227&auto=1&height=66)

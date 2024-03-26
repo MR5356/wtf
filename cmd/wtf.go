@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/MR5356/wtf/cmd/git"
+	"github.com/MR5356/wtf/cmd/saw"
 	"github.com/MR5356/wtf/pkg/version"
 	"github.com/spf13/cobra"
 	"os"
@@ -15,6 +16,7 @@ var rootCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(git.NewGitCommand())
+	rootCmd.AddCommand(saw.NewSawCommand())
 }
 func main() {
 	if err := rootCmd.Execute(); err != nil {

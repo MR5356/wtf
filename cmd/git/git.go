@@ -7,7 +7,8 @@ import (
 
 func NewGitCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use: "git",
+		Use:   "git",
+		Short: "Very cool alternative to git",
 	}
 
 	cmd.SilenceUsage = true
