@@ -134,7 +134,7 @@ func Terminal(cmd string, port int) error {
 	go func() {
 		for {
 			buf := make([]byte, 1024)
-			n, err := teeReaderOut.Read(buf)
+			_, err := teeReaderOut.Read(buf)
 			if err != nil {
 				var pathError *fs.PathError
 				switch {
@@ -147,7 +147,8 @@ func Terminal(cmd string, port int) error {
 				}
 				return
 			}
-			_ = mCtrl.Broadcast(buf[:n])
+			//_ = mRead.Broadcast(buf[:n])
+			//_ = mCtrl.Broadcast(buf[:n])
 		}
 	}()
 
